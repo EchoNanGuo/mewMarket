@@ -42,5 +42,5 @@ spring:
 #  oss:
 #    endpoint: oss-cn-beijing.aliyuncs.com
 #    bucketName: abc-shop
-#    accessKeyId: LTAI5t9XZiy6XQRyVhszD5zy
-#    accessKeySecret: 9LX317PFh6wt2JlUfcjj4vd5PThPO3
+#    accessKeyId: ${ACCESSKEYID}
+#    accessKeySecret: ${ACCESSKEYSECRET}
