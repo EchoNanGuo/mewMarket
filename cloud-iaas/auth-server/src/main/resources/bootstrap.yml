@@ -14,7 +14,7 @@ spring:
         group: ${spring.cloud.nacos.discovery.group}
         file-extension: yml
         shared-configs: # 共享配置文件
-          -
+          - application-${spring.profiles.active}.${spring.cloud.nacos.config.file-extension}
   profiles:
     active: dev
 ###################### nacos远程配置中心配置文件内容####################
@@ -25,7 +25,7 @@ spring:
 #  datasource:   # 配置连接数据库
 #    druid:
 #      driver-class-name: com.mysql.cj.jdbc.Driver
-#      url: jdbc:mysql://${CLOUD_HOST}}:3306/mewMarket?useSSL=false&serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf-8
+#      url: jdbc:mysql://${CLOUD_HOST}:3306/mewMarket?useSSL=false&serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf-8
 #      username: root
 #      password: ${DB_PASSWD}
 #  redis:  # 配置redis

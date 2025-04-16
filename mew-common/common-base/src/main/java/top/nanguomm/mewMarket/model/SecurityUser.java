@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
@@ -74,9 +75,7 @@ public class SecurityUser implements UserDetails {
                 // 根据,号进行分隔处理
                 String[] realPerms = perm.split(",");
                 // 循环遍历
-                for (String realPerm : realPerms) {
-                    finalPermsSet.add(realPerm);
-                }
+                finalPermsSet.addAll(Arrays.asList(realPerms));
             } else {
                 // 不包含，即一条权限
                 finalPermsSet.add(perm);
