@@ -23,7 +23,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @TableName(value = "sys_role")
 public class SysRole implements Serializable {
-    @TableId(value = "role_id", type = IdType.INPUT)
+    @TableId(value = "role_id", type = IdType.AUTO)
     @ApiModelProperty(value="")
     private Long roleId;
 

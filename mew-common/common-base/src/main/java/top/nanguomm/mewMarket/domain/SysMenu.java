@@ -7,6 +7,8 @@ import com.baomidou.mybatisplus.annotation.TableName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.Serializable;
+import java.util.Set;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -22,7 +24,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @TableName(value = "sys_menu")
 public class SysMenu implements Serializable {
-    @TableId(value = "menu_id", type = IdType.INPUT)
+    @TableId(value = "menu_id", type = IdType.AUTO)
     @ApiModelProperty(value="")
     private Long menuId;
 
@@ -74,6 +76,10 @@ public class SysMenu implements Serializable {
     @TableField(value = "order_num")
     @ApiModelProperty(value="排序")
     private Integer orderNum;
+
+    @TableField(exist = false)
+    @ApiModelProperty(value = "子目录")
+    private Set<SysMenu> list;
 
     private static final long serialVersionUID = 1L;
 }

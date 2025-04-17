@@ -1,5 +1,6 @@
 package top.nanguomm.mewMarket.config;
 
+import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.cache.RedisCacheConfiguration;
@@ -12,6 +13,7 @@ import java.time.Duration;
  * redis缓存配置类
  */
 @Configuration
+@EnableCaching
 public class RedisCacheConfig {
 
     @Bean

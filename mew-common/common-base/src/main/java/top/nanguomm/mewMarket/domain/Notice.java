@@ -23,7 +23,7 @@ public class Notice implements Serializable {
     /**
      * 公告id
      */
-    @TableId(value = "id", type = IdType.INPUT)
+    @TableId(value = "id", type = IdType.AUTO)
     @ApiModelProperty(value="公告id")
     private Long id;
 

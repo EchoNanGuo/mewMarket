@@ -23,7 +23,7 @@ public class MemberCollection implements Serializable {
     /**
      * 收藏表
      */
-    @TableId(value = "id", type = IdType.INPUT)
+    @TableId(value = "id", type = IdType.AUTO)
     @ApiModelProperty(value="收藏表")
     private Long id;
 

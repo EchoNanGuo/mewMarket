@@ -26,7 +26,7 @@ public class IndexImg implements Serializable {
     /**
      * 主键
      */
-    @TableId(value = "img_id", type = IdType.INPUT)
+    @TableId(value = "img_id", type = IdType.AUTO)
     @ApiModelProperty(value="主键")
     private Long imgId;
 

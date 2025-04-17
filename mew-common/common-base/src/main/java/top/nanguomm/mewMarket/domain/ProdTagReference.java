@@ -23,7 +23,7 @@ public class ProdTagReference implements Serializable {
     /**
      * 分组引用id
      */
-    @TableId(value = "reference_id", type = IdType.INPUT)
+    @TableId(value = "reference_id", type = IdType.AUTO)
     @ApiModelProperty(value="分组引用id")
     private Long referenceId;
 

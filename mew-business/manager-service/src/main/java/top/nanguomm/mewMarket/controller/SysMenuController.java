@@ -7,10 +7,12 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import top.nanguomm.mewMarket.domain.SysMenu;
 import top.nanguomm.mewMarket.model.Result;
 import top.nanguomm.mewMarket.model.SecurityUser;
 import top.nanguomm.mewMarket.service.SysMenuService;
 import top.nanguomm.mewMarket.util.AuthUtils;
+import top.nanguomm.mewMarket.vo.MenuAndAuth;
 
 import java.util.Set;
 
@@ -23,7 +25,7 @@ public class SysMenuController {
 
    @ApiOperation("查询用户菜单权限和菜单权限")
     @GetMapping("nav")
-    public Result<String> loadUserMenuAndAuth() {
+    public Result<MenuAndAuth> loadUserMenuAndAuth() {
        // 获取当前用户标识
        Long loginUserId = AuthUtils.getLoginUserId();
 
@@ -31,8 +33,9 @@ public class SysMenuController {
        Set<String> perms = AuthUtils.getLoginUserPerms();
 
        // 根据用户标识查询菜单权限集合
-
-       return Result.success(null);
+       Set<SysMenu> menus = sysMenuService.queryUserMenuListByUserId(loginUserId);
+       // 返回结果
+       return Result.success(new MenuAndAuth(menus,perms));
    }
 
 }

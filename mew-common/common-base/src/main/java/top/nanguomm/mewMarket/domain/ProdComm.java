@@ -26,7 +26,7 @@ public class ProdComm implements Serializable {
     /**
      * ID
      */
-    @TableId(value = "prod_comm_id", type = IdType.INPUT)
+    @TableId(value = "prod_comm_id", type = IdType.AUTO)
     @ApiModelProperty(value="ID")
     private Long prodCommId;
 

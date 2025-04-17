@@ -26,7 +26,7 @@ public class Member implements Serializable {
     /**
      * 会员表的主键
      */
-    @TableId(value = "id", type = IdType.INPUT)
+    @TableId(value = "id", type = IdType.AUTO)
     @ApiModelProperty(value="会员表的主键")
     private Integer id;
 

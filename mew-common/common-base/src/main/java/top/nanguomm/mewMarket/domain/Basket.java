@@ -26,7 +26,7 @@ public class Basket implements Serializable {
     /**
      * 主键
      */
-    @TableId(value = "basket_id", type = IdType.INPUT)
+    @TableId(value = "basket_id", type = IdType.AUTO)
     @ApiModelProperty(value="主键")
     private Long basketId;
 

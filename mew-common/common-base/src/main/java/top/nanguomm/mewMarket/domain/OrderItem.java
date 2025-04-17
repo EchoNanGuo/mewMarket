@@ -27,7 +27,7 @@ public class OrderItem implements Serializable {
     /**
      * 订单项ID
      */
-    @TableId(value = "order_item_id", type = IdType.INPUT)
+    @TableId(value = "order_item_id", type = IdType.AUTO)
     @ApiModelProperty(value="订单项ID")
     private Long orderItemId;
 

@@ -26,7 +26,7 @@ public class Category implements Serializable {
     /**
      * 类目ID
      */
-    @TableId(value = "category_id", type = IdType.INPUT)
+    @TableId(value = "category_id", type = IdType.AUTO)
     @ApiModelProperty(value="类目ID")
     private Long categoryId;
 

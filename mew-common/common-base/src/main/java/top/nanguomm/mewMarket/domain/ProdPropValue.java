@@ -22,7 +22,7 @@ public class ProdPropValue implements Serializable {
     /**
      * 属性值ID
      */
-    @TableId(value = "value_id", type = IdType.INPUT)
+    @TableId(value = "value_id", type = IdType.AUTO)
     @ApiModelProperty(value="属性值ID")
     private Long valueId;
 

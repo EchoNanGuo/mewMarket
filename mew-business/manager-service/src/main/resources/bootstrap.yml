@@ -28,15 +28,15 @@ spring:
 #server:
 #  port: 8081
 #swagger3:
-#  base-package: com.powernode.controller
-#  name: vincent
-#  url: https://www.bjpowernode.com
+#  base-package: top.nanguomm.mewMarket.controller
+#  name: 喵喵商城
+#  url: https://nanguomm.top
 #  email: bjpowernode@126.com
 #  title: 后台管理系统-系统管理模块接口
 #  description: 实现后台管理系统的所有接口,根路径/manager-service
 #  license: vincent
-#  licenseUrl: https://www.bjpowernode.com
-#  terms-of-service-url: https://www.bjpowernode.com
+#  licenseUrl: https://nanguomm.top
+#  terms-of-service-url: https://nanguomm.top
 #  version: 1.0
 #aliyun:
 #  oss:
