@@ -6,11 +6,14 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
 import top.nanguomm.mewMarket.domain.SysUser;
 import top.nanguomm.mewMarket.model.Result;
 import top.nanguomm.mewMarket.service.SysUserService;
 import top.nanguomm.mewMarket.util.AuthUtils;
+
+import java.util.List;
 
 /**
  * 系统管理员控制层
@@ -43,7 +46,7 @@ public class SysUserController {
         Page<SysUser> page = new Page<>(current, size);
         // 多条件分页查询系统管理员
         sysUserService.page(page, new LambdaQueryWrapper<SysUser>()
-                .like(username != null,SysUser::getUsername,username)
+                .like(StringUtils.hasText(username),SysUser::getUsername,username)
                 .orderByDesc(SysUser::getCreateTime));
 
         return Result.success(page);
@@ -63,6 +66,22 @@ public class SysUserController {
     public Result<SysUser> loadSysUserInfo(@PathVariable Long id) {
         SysUser sysUser = sysUserService.querySysUserInfoByUserId(id);
         return Result.success(sysUser);
+    }
+
+    @ApiOperation("修改管理员信息")
+    @PutMapping
+    @PreAuthorize("hasAuthority('sys:user:update')")
+    public Result<String> modifySysUserInfo(@RequestBody SysUser sysUser) {
+        Integer count = sysUserService.modifySysUserInfo(sysUser);
+        return Result.handle(count > 0);
+    }
+
+    @ApiOperation("批量/单个删除管理员")
+    @DeleteMapping("{userIds}")
+    @PreAuthorize("hasAuthority('sys:user:delete')")
+    public Result<String> deleteSysUser(@PathVariable List<Long> userIds) {
+        boolean removed = sysUserService.removeSysUserListByUserIds(userIds);
+        return Result.handle(removed);
     }
 
 }

@@ -28,10 +28,10 @@ public class SysLogAspect {
     /**
      * 切入点表达式
      */
-    public static final String POINT_CUT = "execution (* com.powernode.controller.*.*(..))";
+    public static final String POINT_CUT = "execution (* top.nanguomm.mewMarket.controller.*.*(..))";
 
     @Around(value = POINT_CUT)
-    public Object logAround(ProceedingJoinPoint joinPoint) {
+    public Object logAround(ProceedingJoinPoint joinPoint) throws Throwable {
         Object result = null;
         // 获取请求对象
         ServletRequestAttributes requestAttributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
@@ -76,12 +76,8 @@ public class SysLogAspect {
 
         // 记录开始时间
         long startTime = System.currentTimeMillis();
-        try {
             // 执行方法
-            result = joinPoint.proceed(args);
-        } catch (Throwable e) {
-            throw new RuntimeException(e);
-        }
+        result = joinPoint.proceed(args);
         // 记录结束时间
         long endTime = System.currentTimeMillis();
 

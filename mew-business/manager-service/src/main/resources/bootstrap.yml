@@ -3,9 +3,9 @@ spring:
     name: manager-service
   cloud:
     nacos:
-      server-addr: ${CLOUD_HOST}:8848
-      username: ${NACOS_USER}
-      password: ${NACOS_PASSWD}
+      server-addr: 192.168.66.10:8848
+      username: nacos
+      password: nacos
       discovery:
         namespace: 03a7e560-eeed-453f-ac3d-82c67abe840f
         group: A_GROUP
@@ -19,28 +19,3 @@ spring:
           - application-${spring.profiles.active}.${spring.cloud.nacos.config.file-extension}
   profiles:
     active: dev
-
-#################### nacos远程配置文件 ###########################
-#mybatis-plus:
-#  global-config:
-#    db-config:
-#      update-strategy: not_empty  # 全局修改mybatisplus字段更新策略
-#server:
-#  port: 8081
-#swagger3:
-#  base-package: top.nanguomm.mewMarket.controller
-#  name: 喵喵商城
-#  url: https://nanguomm.top
-#  email: bjpowernode@126.com
-#  title: 后台管理系统-系统管理模块接口
-#  description: 实现后台管理系统的所有接口,根路径/manager-service
-#  license: vincent
-#  licenseUrl: https://nanguomm.top
-#  terms-of-service-url: https://nanguomm.top
-#  version: 1.0
-#aliyun:
-#  oss:
-#    endpoint: oss-cn-beijing.aliyuncs.com
-#    bucketName: abc-shop
-#    accessKeyId: ${ACCESSKEYID}
-#    accessKeySecret: ${ACCESSKEYSECRET}
