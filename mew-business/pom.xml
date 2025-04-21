@@ -13,6 +13,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>manager-service</module>
+        <module>product-service</module>
     </modules>
     <description>项目业务模块</description>
 

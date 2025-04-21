@@ -14,7 +14,6 @@ import java.util.stream.Collectors;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.StringUtils;
-import top.nanguomm.mewMarket.domain.SysRole;
 import top.nanguomm.mewMarket.domain.SysUserRole;
 import top.nanguomm.mewMarket.mapper.SysUserMapper;
 import top.nanguomm.mewMarket.domain.SysUser;
@@ -79,14 +78,6 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
         return sysUser;
     }
 
-    /**
-     * 修改管理员信息
-     * 1.删除原有的管理员与角色关系记录
-     * 2.添加新的管理员与角色关系记录
-     * 3.修改管理员信息
-     * @param sysUser
-     * @return
-     */
     @Override
     public Integer modifySysUserInfo(SysUser sysUser) {
         // 获取管理员标识
@@ -121,13 +112,6 @@ public class SysUserServiceImpl extends ServiceImpl<SysUserMapper, SysUser> impl
         return baseMapper.updateById(sysUser);
     }
 
-    /**
-     * 批量/单个删除管理员
-     * 1.删除管理员与角色的关系记录
-     * 2.删除管理员
-     * @param userIds
-     * @return
-     */
     @Override
     @Transactional(rollbackFor = Exception.class)
     public boolean removeSysUserListByUserIds(List<Long> userIds) {

@@ -9,6 +9,8 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.Date;
+import java.util.List;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -157,5 +159,22 @@ public class Prod implements Serializable {
     @ApiModelProperty(value="版本 乐观锁")
     private Integer version;
 
+    @TableField(exist = false)
+    private DeliveryModeVo deliveryModeVo;
+
+    @TableField(exist = false)
+     private List<Sku> skuList;
+
+    @TableField(exist = false)
+    private List<Long> tagList;
     private static final long serialVersionUID = 1L;
+
+    @Data
+    @AllArgsConstructor
+    @NoArgsConstructor
+    public class DeliveryModeVo{
+        private boolean hasShopDelivery;
+        private Boolean hasUserPickUp;
+
+    }
 }

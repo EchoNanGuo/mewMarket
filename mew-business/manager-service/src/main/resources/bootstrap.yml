@@ -19,3 +19,29 @@ spring:
           - application-${spring.profiles.active}.${spring.cloud.nacos.config.file-extension}
   profiles:
     active: dev
+
+### nacos远程配置内容 ####
+#mybatis-plus:
+#  global-config:
+#    db-config:
+#      update-strategy: not_empty  # 全局修改mybatisplus字段更新策略
+#server:
+#  port: 8081
+#swagger3:
+#  base-package: com.powernode.controller
+#  name: vincent
+#  url: https://www.bjpowernode.com
+#  email: bjpowernode@126.com
+#  title: 后台管理系统-系统管理模块接口
+#  description: 实现后台管理系统的所有接口,根路径/manager-service
+#  license: vincent
+#  licenseUrl: https://www.bjpowernode.com
+#  terms-of-service-url: https://www.bjpowernode.com
+#  version: 1.0
+#aliyun:
+#  oss:
+#    endpoint: oss-cn-beijing.aliyuncs.com
+#    bucketName: abc-shop
+#    accessKeyId: LTAI5t9XZiy6XQRyVhszD5zy
+#    accessKeySecret: 9LX317PFh6wt2JlUfcjj4vd5PThPO3
+#

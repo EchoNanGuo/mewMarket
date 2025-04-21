@@ -15,3 +15,22 @@ spring:
         file-extension: yml
   profiles:
     active: dev
+
+####### nacos #######
+#server:
+#  port: 80
+#spring:
+#  redis:
+#    host: 192.168.66.10
+#    port: 6379
+#    password: 123456
+#  cloud:
+#    gateway:
+#      discovery:
+#        locator:
+#          enabled: true
+#gateway:
+#  white:
+#    allow-urls:
+#      - /auth-server/doLogin #该路径为登录路径
+#      - /free

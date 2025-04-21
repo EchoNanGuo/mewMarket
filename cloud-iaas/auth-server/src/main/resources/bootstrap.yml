@@ -17,3 +17,7 @@ spring:
           - application-${spring.profiles.active}.${spring.cloud.nacos.config.file-extension}
   profiles:
     active: dev
+
+### naco远程配置内容 ####
+#server:
+#  port: 9999

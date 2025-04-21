@@ -1,0 +1,36 @@
+spring:
+  application:
+    name: product-service
+  cloud:
+    nacos:
+      server-addr: 192.168.66.10:8848
+      username: nacos
+      password: nacos
+      discovery:
+        namespace: 03a7e560-eeed-453f-ac3d-82c67abe840f
+        group: A_GROUP
+        service: ${spring.application.name}
+      config:
+        namespace: ${spring.cloud.nacos.discovery.namespace}
+        group: ${spring.cloud.nacos.discovery.group}
+        prefix: ${spring.application.name}
+        file-extension: yml
+        shared-configs:
+          - application-${spring.profiles.active}.${spring.cloud.nacos.config.file-extension}
+  profiles:
+    active: dev
+
+### nacos远程配置内容 ###
+#server:
+#  port: 8082
+#swagger3:
+#  base-package: top.nanguomm.mewMarket.controller
+#  name: 喵喵商城
+#  url: https://nanguomm.top
+#  email: zhuyuqinss@gmail.com
+#  title: 后台管理系统-产品管理模块接口
+#  description: 实现后台管理系统的所有接口,根路径/product-service
+#  license: nanguo
+#  licenseUrl: https://nanguomm.top
+#  terms-of-service-url: https://nanguomm.top
+#  version: 1.0

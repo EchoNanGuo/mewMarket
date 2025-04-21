@@ -7,7 +7,6 @@ import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
-import java.util.Collections;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -54,11 +53,6 @@ public class SysMenuServiceImpl extends ServiceImpl<SysMenuMapper, SysMenu> impl
         return baseMapper.updateById(sysMenu)>0;
     }
 
-    /**
-     * 删除菜单权限
-     * @param menuId
-     * @return
-     */
     @Override
     @CacheEvict(key = ManagerConstants.SYS_ALL_MENU_KEY)
     public Boolean removeSysMenuById(Long menuId) {

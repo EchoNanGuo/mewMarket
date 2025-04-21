@@ -1,0 +1,26 @@
+DataId:application-dev.yml
+Group:DEFAULT_GROUP
+内容:
+spring:
+  datasource:   # 配置连接数据库
+    druid:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://192.168.66.10:3306/mewMarket?useSSL=false&serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=utf-8&useGeneratedKeys=true
+      username: root
+      password: 123456
+  redis:  # 配置redis
+    host: 192.168.66.10
+    port: 6379
+    password: 123456
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher # 指定路径配置策略
+    format: # 接收日期参数格式
+      date: yyyy-MM-dd HH:mm:ss
+  jackson:  # springmvc中设置响应日期格式
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8  # 设置时区
+mybatis-plus:
+  mapper-locations: classpath*:/mapper/**/*.xml
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
